@@ -9,5 +9,9 @@
 
 // Collect the numbers and set them to a variable - an array
 
-const numbers = document.querySelectorAll('.numbers')
-console.log(numbers)
+const numbers = document.querySelectorAll('#number')
+console.log(Array.from(numbers))
+
+for (number in numbers) {
+  console.log(number)
+}
