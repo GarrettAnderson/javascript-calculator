@@ -32,8 +32,8 @@ function calcNums (c, d, e) {
   console.log('num is clicked')
 }
 
-let number =
-numbers.addEventListener('click',calcNums)
+let allButtons = document.querySelector('div')
+allButtons.addEventListener('click',calcNums)
 
 
 // When user clicks on a number - that number gets stored as a variable... firstNum
