@@ -9,18 +9,31 @@
 
 // Collect the numbers and set them to a variable - an array
 
-let number
-const numbers = document.querySelectorAll('#number')
-console.log(Array.from(numbers))
 
-// Print the numbers
-for (number in numbers) {
-  console.log(number)
+let numbersHTML = document.querySelectorAll('#number')
+console.log(numbersHTML)
+const nodeArr = Array.from(numbersHTML)
+let numbers = nodeArr.map((a, b) => {
 
-  number.addEventListener({
-    console.log{'number clicked'}
-  })
+  // Print the numbers to the console
+  console.log(a, b)
+  return a.innerHTML
+
+})
+
+console.log(numbers)
+
+
+
+
+function calcNums (c, d, e) {
+  // c is the first num, d is the second num and e is the operand
+
+  console.log('num is clicked')
 }
+
+let number =
+numbers.addEventListener('click',calcNums)
 
 
 // When user clicks on a number - that number gets stored as a variable... firstNum
