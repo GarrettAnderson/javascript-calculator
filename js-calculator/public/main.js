@@ -13,24 +13,24 @@
 let numbersHTML = document.querySelectorAll('#number')
 console.log(numbersHTML)
 const nodeArr = Array.from(numbersHTML)
-let numbers = nodeArr.map((a, b) => {
-
-  // Print the numbers to the console
-  console.log(a, b)
-  return a.innerHTML
-
-})
-
-console.log(numbers)
-
-
-
+let numbers
 
 function calcNums (c, d, e) {
   // c is the first num, d is the second num and e is the operand
 
   console.log('num is clicked')
+
+  numbers = nodeArr.map((a, b) => {
+
+    // Print the numbers to the console
+    console.log(a, b)
+    return a.innerHTML
+
+  })
+  console.log(numbers)
+
 }
+
 
 let allButtons = document.querySelector('div')
 allButtons.addEventListener('click',calcNums)
