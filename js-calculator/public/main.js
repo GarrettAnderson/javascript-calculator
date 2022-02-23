@@ -22,13 +22,21 @@ function calcNums (e) {
   //   console.log(a, b)
   // number == a.innerHTML
   // })
-  console.log(e.target.innerHTML)
+  number = parseInt(e.target.innerHTML)
+  console.log(Number.isInteger(e.target.innerHTML))
+  console.log(number)
+
+  if (Number.isInteger(number) == true) {
+    console.log('clicked a number')
+  } else {
+    console.log('didn\'t click a number')
+  }
 
 
 }
 
 
-let allButtons = document.querySelector('div')
+let allButtons = document.querySelector('.buttons')
 allButtons.addEventListener('click',calcNums)
 
 
