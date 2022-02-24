@@ -14,6 +14,7 @@ let numbersHTML = document.querySelectorAll('#number')
 console.log(numbersHTML)
 const nodeArr = Array.from(numbersHTML)
 let number
+let firstNumArr = []
 
 function calcNums (e) {
   console.log('num is clicked')
@@ -26,8 +27,12 @@ function calcNums (e) {
   console.log(Number.isInteger(e.target.innerHTML))
   console.log(number)
 
-  if (Number.isInteger(number) == true) {
+  if (Number.isInteger(number) == true || e.target.innerHTML == '.') {
     console.log('clicked a number')
+    console.log(e.target.innerHTML)
+
+    firstNumArr.push(number)
+
   } else {
     console.log('didn\'t click a number')
   }
