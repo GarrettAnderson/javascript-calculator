@@ -10,13 +10,17 @@
 // Collect the numbers and set them to a variable - an array
 
 
+// PEDAC
+
+//
+
 let numbersHTML = document.querySelectorAll('#number')
 console.log(numbersHTML)
 const nodeArr = Array.from(numbersHTML)
 let number
 let firstNumArr = []
 
-function calcNums (e) {
+function selectCalc (e) {
   console.log('num is clicked')
   // numbers = nodeArr.map((a, b) => {
   //   // Print the numbers to the console
@@ -33,17 +37,23 @@ function calcNums (e) {
 
     firstNumArr.push(number)
 
-  } else {
+  } else if (e.target.innerHTML !== 'C' && e.targt.innerHTML !== '='){
     console.log('didn\'t click a number')
   }
 
 
 }
 
+let leftPanel = document.querySelector('.leftPanel')
+// console.log(numberButtons)
 
-let allButtons = document.querySelector('.buttons')
-allButtons.addEventListener('click',calcNums)
+// let allButtons = document.querySelector('.buttons')
+leftPanel.addEventListener('click',selectCalc)
 
+
+// create a function to determine the first numbers
+
+// create a function to determine the second number
 
 // When user clicks on a number - that number gets stored as a variable... firstNum
   // the value is revealed in the solution box on the UI
