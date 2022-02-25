@@ -23,11 +23,12 @@ let number
 let firstNumArr = []
 let secondNumArr = []
 let operand
+let result
 
 // for (var i = 0; i < nodeArr)
 
 
-function calcFirstNum (e) {
+function calcNums (e) {
 
   console.log('num is clicked')
   // numbers = nodeArr.map((a, b) => {
@@ -77,7 +78,6 @@ if (operand == null) {
       console.log('first num is: ', firstNumArr)
       console.log('second num is: ', secondNumArr)
 
-
   }
 
 }
@@ -89,6 +89,33 @@ function calcOperator (e) {
   console.log(operand)
 }
 
+function calcSolution () {
+
+// contract number arrays back to numbers
+
+  console.log(firstNumArr.join(''))
+  console.log(secondNumArr.join(''))
+
+  let firstNum = parseInt(firstNumArr.join(''))
+  let secondNum = parseInt(secondNumArr.join(''))
+
+
+  if (operand == '+') {
+      result = firstNum + secondNum
+      console.log(result)
+  } else if (operand == '-') {
+    result = firstNum - secondNum
+    console.log(result)
+  } else if (operand == '*') {
+    result = firstNum * secondNum
+    console.log(result)
+  } else {
+    result = firstNum / secondNum
+    console.log(result)
+  }
+
+}
+
 
 let leftPanel = document.querySelector('.leftPanel')
 let operators = document.querySelector('.operators')
@@ -96,8 +123,9 @@ let equalSign = document.querySelector('.equal')
 // console.log(numberButtons)
 
 // let allButtons = document.querySelector('.buttons')
-leftPanel.addEventListener('click', calcFirstNum)
+leftPanel.addEventListener('click', calcNums)
 operators.addEventListener('click', calcOperator)
+equalSign.addEventListener('click', calcSolution)
 
 
 // create a function to determine the first numbers
