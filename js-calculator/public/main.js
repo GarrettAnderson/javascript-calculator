@@ -59,6 +59,7 @@ if (operand == null) {
       console.log(clearBtn)
 
       firstNumArr = []
+      operand = null
 
     }
   } else {
@@ -66,6 +67,17 @@ if (operand == null) {
     console.log('operand has been chosen: ' + operand)
 
     secondNumArr.push(e.target.innerHTML)
+
+      if (e.target.innerHTML == 'C') {
+          firstNumArr = []
+          secondNumArr = []
+          operand = null
+      }
+
+      console.log('first num is: ', firstNumArr)
+      console.log('second num is: ', secondNumArr)
+
+
   }
 
 }
