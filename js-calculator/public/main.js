@@ -21,9 +21,12 @@ const nodeArr = Array.from(numbersHTML)
 console.log(nodeArr)
 let number
 let firstNumArr = []
+let firstNum
+let secondNum
 let secondNumArr = []
 let operand
 let result
+let input = document.querySelector('.input')
 
 // for (var i = 0; i < nodeArr)
 
@@ -53,6 +56,12 @@ if (operand == null) {
       firstNumArr.push(e.target.innerHTML)
       console.log(firstNumArr)
 
+      firstNumArr.join('')
+      firstNum = parseInt(firstNumArr.join(''))
+
+      input.innerHTML = firstNum
+
+
     } else {
       console.log('didn\'t click a number')
 
@@ -68,6 +77,9 @@ if (operand == null) {
     console.log('operand has been chosen: ' + operand)
 
     secondNumArr.push(e.target.innerHTML)
+    secondNum = parseInt(secondNumArr.join(''))
+
+    input.innerHTML = firstNum + operand + secondNum
 
       if (e.target.innerHTML == 'C') {
           firstNumArr = []
@@ -78,6 +90,8 @@ if (operand == null) {
       console.log('first num is: ', firstNumArr)
       console.log('second num is: ', secondNumArr)
 
+
+
   }
 
 }
@@ -87,6 +101,11 @@ function calcOperator (e) {
   console.log('finding the operator')
   operand = e.target.innerHTML
   console.log(operand)
+
+  input.innerHTML = firstNum + operand
+
+
+
 }
 
 function calcSolution () {
@@ -113,6 +132,8 @@ function calcSolution () {
     result = firstNum / secondNum
     console.log(result)
   }
+
+  input.innerHTML = result
 
 }
 
