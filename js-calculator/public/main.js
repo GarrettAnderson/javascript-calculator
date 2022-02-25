@@ -14,17 +14,21 @@
 
 //
 
+let isCalculating = false
 let numbersHTML = document.querySelectorAll('#number')
 console.log(numbersHTML)
 const nodeArr = Array.from(numbersHTML)
 console.log(nodeArr)
 let number
 let firstNumArr = []
+let secondNumArr = []
+let operand
 
 // for (var i = 0; i < nodeArr)
 
 
-function selectCalc (e) {
+function calcFirstNum (e) {
+
   console.log('num is clicked')
   // numbers = nodeArr.map((a, b) => {
   //   // Print the numbers to the console
@@ -35,21 +39,44 @@ function selectCalc (e) {
   console.log(Number.isInteger(e.target.innerHTML))
   console.log(number)
 
+  // if the operator has not been set, saved in a variable then
+    // it is assumed the first number is only to be chosen.
+    // if the operator button is selected than the else statement will trigger
+    // to find the second num
+
+if (operand == null) {
   if (Number.isInteger(number) == true || e.target.innerHTML == '.') {
-    console.log('clicked a number')
-    console.log(e.target.innerHTML)
+      console.log('clicked a number')
+      console.log(e.target.innerHTML)
 
-    firstNumArr.push(number)
+      firstNumArr.push(e.target.innerHTML)
+      console.log(firstNumArr)
 
+    } else {
+      console.log('didn\'t click a number')
+
+      let clearBtn = e.target.innerHTML
+      console.log(clearBtn)
+
+      firstNumArr = []
+
+    }
   } else {
-    console.log('didn\'t click a number')
+    // the operand has been chosen and now move on to find the second number
+    console.log('operand has been chosen: ' + operand)
 
-    let operator = e.target.innerHTML
-    console.log(operator)
-
+    secondNumArr.push(e.target.innerHTML)
   }
 
 }
+
+
+function calcOperator (e) {
+  console.log('finding the operator')
+  operand = e.target.innerHTML
+  console.log(operand)
+}
+
 
 let leftPanel = document.querySelector('.leftPanel')
 let operators = document.querySelector('.operators')
@@ -57,7 +84,8 @@ let equalSign = document.querySelector('.equal')
 // console.log(numberButtons)
 
 // let allButtons = document.querySelector('.buttons')
-leftPanel.addEventListener('click', selectCalc)
+leftPanel.addEventListener('click', calcFirstNum)
+operators.addEventListener('click', calcOperator)
 
 
 // create a function to determine the first numbers
