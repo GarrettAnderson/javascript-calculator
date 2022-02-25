@@ -17,8 +17,12 @@
 let numbersHTML = document.querySelectorAll('#number')
 console.log(numbersHTML)
 const nodeArr = Array.from(numbersHTML)
+console.log(nodeArr)
 let number
 let firstNumArr = []
+
+// for (var i = 0; i < nodeArr)
+
 
 function selectCalc (e) {
   console.log('num is clicked')
@@ -37,18 +41,23 @@ function selectCalc (e) {
 
     firstNumArr.push(number)
 
-  } else if (e.target.innerHTML !== 'C' && e.targt.innerHTML !== '='){
+  } else {
     console.log('didn\'t click a number')
-  }
 
+    let operator = e.target.innerHTML
+    console.log(operator)
+
+  }
 
 }
 
 let leftPanel = document.querySelector('.leftPanel')
+let operators = document.querySelector('.operators')
+let equalSign = document.querySelector('.equal')
 // console.log(numberButtons)
 
 // let allButtons = document.querySelector('.buttons')
-leftPanel.addEventListener('click',selectCalc)
+leftPanel.addEventListener('click', selectCalc)
 
 
 // create a function to determine the first numbers
