@@ -85,6 +85,8 @@ if (operand == null) {
           firstNumArr = []
           secondNumArr = []
           operand = null
+
+          input.innerHTML = null
       }
 
       console.log('first num is: ', firstNumArr)
